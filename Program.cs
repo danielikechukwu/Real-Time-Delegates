@@ -70,23 +70,26 @@ public class Worker
         lstEmployees.Add(emp2);
         lstEmployees.Add(emp3);
 
-        EligibleToPromotion eligibleToPromote = new EligibleToPromotion(Promote);
+        //EligibleToPromotion eligibleToPromote = new EligibleToPromotion(Promote);
 
-        Employees.PromoteEmployee(lstEmployees, eligibleToPromote);
+        //Employees.PromoteEmployee(lstEmployees, eligibleToPromote);
+
+        // Working with LAMBDA Expression
+        Employees.PromoteEmployee(lstEmployees, x => x.Experience > 5);
 
     }
 
-    public static bool Promote(Employee employee)
-    {
-        if(employee.Salary > 10000)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    //public static bool Promote(Employee employee)
+    //{
+    //    if (employee.Salary > 10000)
+    //    {
+    //        return true;
+    //    }
+    //    else
+    //    {
+    //        return false;
+    //    }
+    //}
 
     //Delegate Signature must match with the method signature
     public static void _WorkPerformed(int hours, string workType)
